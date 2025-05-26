@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Good Night Message for Chiuu</title> 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full-screen animated gradient background */
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #0d47a1, #ff6f00, #d32f2f, #7b1fa2, #388e3c, #1976d2);
+      background-size: 600% 600%;
+      animation: gradientBG 20s ease infinite;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+    }
+
+    /* Gradient animation keyframes */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Container for the message and moon */
+    .message-container {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+    }
+
+    /* Half-moon styling with smooth color animation */
+    .moon {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 30% 30%, #ffedc1, #f1c27d);
+      border-radius: 50%;
+      position: relative;
+      margin: 0 auto 30px;
+      box-shadow: 0 0 20px 5px rgba(255, 237, 193, 0.6);
+      animation: moonColor 15s ease-in-out infinite;
+    }
+
+    /* Smooth color animation for moon */
+    @keyframes moonColor {
+      0% { background: radial-gradient(circle at 30% 30%, #ffedc1, #f1c27d); }
+      33% { background: radial-gradient(circle at 30% 30%, #b0e0e6, #4682b4); }
+      66% { background: radial-gradient(circle at 30% 30%, #d8bfd8, #dda0dd); }
+      100% { background: radial-gradient(circle at 30% 30%, #ffedc1, #f1c27d); }
+    }
+
+    /* Creating the half-moon effect */
+    .moon::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: 50%;
+      box-shadow: inset -10px 0 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Stars container */
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Individual star styling */
+    .star {
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle 2s infinite;
+    }
+
+    /* Twinkle animation keyframes */
+    @keyframes twinkle {
+      0% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0; transform: scale(0.5); }
+    }
+
+    /* Good night message styling */
+    .goodnight-text {
+      font-size: 2em;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      line-height: 1.5;
+    }
+
+    /* Emoji styling */
+    .emoji {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .goodnight-text {
+        font-size: 1.5em;
+      }
+
+      .moon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+      }
+    }
+  </style> 
+ </head> 
+ <body> <!-- Stars Container --> 
+  <div class="stars" id="stars"></div> <!-- Message and Moon Container --> 
+  <div class="message-container"> 
+   <div class="moon"></div> 
+   <div class="goodnight-text">
+     🌙Good Night🌙 
+    <br> 🥳 Mummy 🥳 
+    <br> 
+    <br> "✨May your dreams be filled with stars✨ 
+    <br>🌃&amp; your night as calm as the moon🌃 
+    <div class="emoji">
+      🌌💤 
+    </div> 
+   </div> 
+  </div> <!-- JavaScript to Generate Stars --> 
+  <script>
+    const starsContainer = document.getElementById('stars');
+    const numberOfStars = 100; // Adjust the number of stars here
+
+    for (let i = 0; i < numberOfStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+
+      // Random size between 1px and 3px
+      const size = Math.random() * 2 + 1;
+      star.style.width = ${size}px;
+      star.style.height = ${size}px;
+
+      // Random position
+      star.style.top = ${Math.random() * 100}%;
+      star.style.left = ${Math.random() * 100}%;
+
+      // Random animation duration between 1s and 3s
+      star.style.animationDuration = ${Math.random() * 2 + 1}s;
+
+      // Random animation delay to spread the twinkling
+      star.style.animationDelay = ${Math.random() * 5}s;
+
+      starsContainer.appendChild(star);
+    }
+  </script> 
+ </body>
+</html>
